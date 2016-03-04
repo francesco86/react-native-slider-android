@@ -18,7 +18,7 @@ $ npm install react-native-slider-android --save
 ...
 
 include ':react-native-slider-android', ':app'
-project(':react-native-slider-android').projectDir = new File(rootProject.projectDir, '../node_modules/react-native-slider-android')
+project(':react-native-slider-android').projectDir = new File(rootProject.projectDir, '../node_modules/react-native-slider-android/app')
 ```
 
 ### Step 3 - Update app Gradle Build
