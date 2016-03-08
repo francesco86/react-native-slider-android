@@ -13,8 +13,8 @@ import android.widget.SeekBar;
 public class RNSlider extends SeekBar{
 
     RNSliderChangeListener sliderListener;
-    private int minValue = 0;
-    private int maxValue = 100;
+    private int minValue = 9;
+    private int maxValue = 80;
 
     interface RNSliderChangeListener {
         void onProgressChanged(RNSlider slider, int progress, boolean fromUser);

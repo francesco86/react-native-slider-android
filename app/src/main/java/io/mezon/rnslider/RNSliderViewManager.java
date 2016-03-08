@@ -6,9 +6,9 @@ import android.widget.FrameLayout;
 import com.facebook.react.bridge.Arguments;
 import com.facebook.react.bridge.ReactContext;
 import com.facebook.react.bridge.WritableMap;
-import com.facebook.react.uimanager.ReactProp;
 import com.facebook.react.uimanager.SimpleViewManager;
 import com.facebook.react.uimanager.ThemedReactContext;
+import com.facebook.react.uimanager.annotations.ReactProp;
 import com.facebook.react.uimanager.events.RCTEventEmitter;
 
 import javax.annotation.Nullable;
@@ -38,7 +38,7 @@ public class RNSliderViewManager extends SimpleViewManager<FrameLayout> {
     }
 
     @ReactProp(name = PROP_MAX)
-    public void setMax(FrameLayout view, @Nullable Integer max) {
+    public void setMax(FrameLayout view, int max) {
         if(view.getChildCount() == 0) {
             throw new IllegalStateException("Slider not yet created");
         }

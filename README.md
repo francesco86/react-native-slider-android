@@ -3,6 +3,18 @@ A slider component for selecting integer values. (Similar to SliderIOS.)
 
 ## Example
 
+```
+...
+
+import SliderAndroid from 'react-native-slider-android';
+
+...
+
+<SliderAndroid onValueChange={this.onValueChange} value={6} 
+minimumValue={-10} maximumValue={10} style={{height: 30, width: 300,}}/>
+
+```
+
 ## Install
 
 ### Step 1 - Install the npm package
@@ -50,3 +62,9 @@ dependencies {
                 new RNSliderPackage()   // <-- Register package here
         );
     }
+```
+##Props
+- minimumValue : number
+- maximumValue : number
+- value (This is the initial value.) : number
+- onValueChange : function

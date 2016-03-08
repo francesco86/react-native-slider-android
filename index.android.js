@@ -2,7 +2,7 @@
 import React, { Component, PropTypes, requireNativeComponent } from 'react-native';
 
 
-export default class SliderAndroid extends React.Component {
+export default class SliderAndroid extends Component {
   constructor() {
     super();
     this._onChange = this._onChange.bind(this);
@@ -18,10 +18,11 @@ export default class SliderAndroid extends React.Component {
   }
 }
 SliderAndroid.propTypes = {
-  onValueChange: React.PropTypes.func,
-  minimumValue: React.PropTypes.number,
-  maximumValue: React.PropTypes.number,
-  value: React.PropTypes.number,
+  onValueChange: PropTypes.func,
+  viewFinderBorderLength: PropTypes.number,
+  minimumValue: PropTypes.number,
+  maximumValue: PropTypes.number,
+  value: PropTypes.number,
   rotation: PropTypes.number,
   scaleX: PropTypes.number,
   scaleY: PropTypes.number,
