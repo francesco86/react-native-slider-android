@@ -49,6 +49,7 @@ dependencies {
 
 ```java
 // MainActivity.java
+import io.mezon.rnslider.RNSliderPackage;
 
 ...
     /**
