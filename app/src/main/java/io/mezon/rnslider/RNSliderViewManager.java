@@ -78,6 +78,7 @@ public class RNSliderViewManager extends SimpleViewManager<FrameLayout> {
 			@Override
 			public void onStartTrackingTouch(SeekBar seekBar) {
 				WritableMap event = Arguments.createMap();
+				ReactContext reactContext = (ReactContext) view.getContext();
 				reactContext
                   .getJSModule(DeviceEventManagerModule.RCTDeviceEventEmitter.class)
                   .emit("startTrack", event);
@@ -86,6 +87,7 @@ public class RNSliderViewManager extends SimpleViewManager<FrameLayout> {
 			@Override
 			public void onStopTrackingTouch(SeekBar seekBar) {
 				WritableMap event = Arguments.createMap();
+				ReactContext reactContext = (ReactContext) view.getContext();
 				reactContext
                   .getJSModule(DeviceEventManagerModule.RCTDeviceEventEmitter.class)
                   .emit("stopTrack", event);
