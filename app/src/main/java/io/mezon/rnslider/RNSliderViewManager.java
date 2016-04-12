@@ -74,6 +74,22 @@ public class RNSliderViewManager extends SimpleViewManager<FrameLayout> {
                         "topChange",
                         event);
             }
+
+			@Override
+			public void onStartTrackingTouch(SeekBar seekBar) {
+				WritableMap event = Arguments.createMap();
+				reactContext
+                  .getJSModule(DeviceEventManagerModule.RCTDeviceEventEmitter.class)
+                  .emit("startTrack", event);
+			}
+
+			@Override
+			public void onStopTrackingTouch(SeekBar seekBar) {
+				WritableMap event = Arguments.createMap();
+				reactContext
+                  .getJSModule(DeviceEventManagerModule.RCTDeviceEventEmitter.class)
+                  .emit("stopTrack", event);
+			}
         });
 
         view.addView(

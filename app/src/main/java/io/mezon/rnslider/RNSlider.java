@@ -58,12 +58,12 @@ public class RNSlider extends SeekBar{
 
                 @Override
                 public void onStartTrackingTouch(SeekBar seekBar) {
-
+                    sliderListener.onStartTrackingTouch(RNSlider.this);
                 }
 
                 @Override
                 public void onStopTrackingTouch(SeekBar seekBar) {
-
+                    sliderListener.onStopTrackingTouch(RNSlider.this);
                 }
             });
     }
