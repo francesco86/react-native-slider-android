@@ -18,6 +18,8 @@ public class RNSlider extends SeekBar{
 
     interface RNSliderChangeListener {
         void onProgressChanged(RNSlider slider, int progress, boolean fromUser);
+        void onStartTrackingTouch(RNSlider slider);
+        void onStopTrackingTouch(RNSlider slider);
     }
 
     public RNSlider(Context context) {

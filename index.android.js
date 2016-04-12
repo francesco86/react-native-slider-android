@@ -8,25 +8,16 @@ export default class SliderAndroid extends Component {
         this._onChange = this._onChange.bind(this);
     }
 
-    componentWillMount() {
-        if (this.props.onStartTrack) {
-            this.addListenerOn(DeviceEventEmitter,
-                'startTrack',
-                this.props.onStartTrack);
-        }
-
-        if (this.props.onStopTrack) {
-            this.addListenerOn(DeviceEventEmitter,
-                'stopTrack',
-                this.props.onStopTrack);
-        }
-    }
-
     _onChange(event:Event) {
-        if (!this.props.onValueChange) {
-            return;
+        if (this.props.onValueChange && event.nativeEvent.name === "onChange") {
+            return this.props.onValueChange(event.nativeEvent.progress);
         }
-        this.props.onValueChange(event.nativeEvent.progress);
+        if (this.props.onStartTrack && event.nativeEvent.name === "onStart") {
+            return this.props.onStartTrack();
+        }
+        if (this.props.onStopTrack && event.nativeEvent.name === "onStop") {
+            return this.props.onStopTrack();
+        }
     }
 
     render() {

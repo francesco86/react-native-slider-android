@@ -67,6 +67,7 @@ public class RNSliderViewManager extends SimpleViewManager<FrameLayout> {
             @Override
             public void onProgressChanged(RNSlider slider, int progress, boolean fromUser) {
                 WritableMap event = Arguments.createMap();
+                event.putString("name", "onChange");
                 event.putInt("progress", progress);
                 ReactContext reactContext = (ReactContext) view.getContext();
                 reactContext.getJSModule(RCTEventEmitter.class).receiveEvent(
@@ -76,21 +77,25 @@ public class RNSliderViewManager extends SimpleViewManager<FrameLayout> {
             }
 
 			@Override
-			public void onStartTrackingTouch(SeekBar seekBar) {
-				WritableMap event = Arguments.createMap();
-				ReactContext reactContext = (ReactContext) view.getContext();
-				reactContext
-                  .getJSModule(DeviceEventManagerModule.RCTDeviceEventEmitter.class)
-                  .emit("startTrack", event);
+			public void onStartTrackingTouch(RNSlider slider) {
+                WritableMap event = Arguments.createMap();
+                event.putString("name", "onStart");
+                ReactContext reactContext = (ReactContext) view.getContext();
+                reactContext.getJSModule(RCTEventEmitter.class).receiveEvent(
+                        view.getId(),
+                        "topChange",
+                        event);
 			}
 
 			@Override
-			public void onStopTrackingTouch(SeekBar seekBar) {
-				WritableMap event = Arguments.createMap();
-				ReactContext reactContext = (ReactContext) view.getContext();
-				reactContext
-                  .getJSModule(DeviceEventManagerModule.RCTDeviceEventEmitter.class)
-                  .emit("stopTrack", event);
+			public void onStopTrackingTouch(RNSlider slider) {
+                WritableMap event = Arguments.createMap();
+                event.putString("name", "onStop");
+                ReactContext reactContext = (ReactContext) view.getContext();
+                reactContext.getJSModule(RCTEventEmitter.class).receiveEvent(
+                        view.getId(),
+                        "topChange",
+                        event);
 			}
         });
 
