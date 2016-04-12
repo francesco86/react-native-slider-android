@@ -1,5 +1,5 @@
 'use strict';
-import React, { Component, PropTypes, requireNativeComponent, DeviceEventEmitter } from 'react-native';
+import React, { Component, PropTypes, requireNativeComponent } from 'react-native';
 
 
 export default class SliderAndroid extends Component {
