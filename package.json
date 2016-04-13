@@ -8,7 +8,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/mezonio/react-native-slider-android.git"
+    "url": "git+https://git@github.com/francesco86/react-native-slider-android.git"
   },
   "keywords": [
     "android",
@@ -27,5 +27,5 @@
   "bugs": {
     "url": "https://github.com/mezonio/react-native-slider-android/issues"
   },
-  "homepage": "https://github.com/mezonio/react-native-slider-android#readme"
+  "homepage": "git+https://git@github.com/francesco86/react-native-slider-android#readme"
 }
